@@ -1,0 +1,18 @@
+{
+    "products": [
+      {
+        "image": "https://cdn.dummyjson.com/product-images/1/1.jpg",
+        "title": "T-shirt",
+        "color": ["Red", "Blue", "Green"],
+        "price": 5
+        
+      },
+      {
+        "image": "https://cdn.dummyjson.com/product-images/2/1.jpg",
+        "title": "Shoe",
+        "color": ["Black", "White", "Gray"],
+        "price": 3
+       
+      }
+    ]
+}
