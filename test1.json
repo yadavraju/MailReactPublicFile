@@ -1,0 +1,12 @@
+{
+  "products": [
+      {
+          "id": 0,
+          "image": "https://cdn.dummyjson.com/product-images/1/1.jpg",
+          "title": "Example Product 1",
+          "color": ["Red", "Blue", "Green"],
+          "price": 5
+      }
+  ]
+
+}
