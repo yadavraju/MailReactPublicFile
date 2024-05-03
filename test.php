@@ -1,0 +1,355 @@
+<!doctype html>
+<html ⚡4email data-css-strict>
+
+<head>
+  <meta charset="utf-8">
+  <style amp4email-boilerplate>
+    body {
+      visibility: hidden;
+    }
+  </style>
+  <style amp-custom>
+    * {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    h2,
+    p {
+      margin: 0;
+    }
+
+    .container {
+      background-color: #f2efef;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
+
+    .cover_image {
+      width: 100%;
+    }
+
+    .cover_image img {
+      object-fit: contain;
+      object-position: center center;
+    }
+
+    .products_List {
+      border-bottom: 1px solid #ccc;
+      margin: 0px auto;
+      padding: 5px;
+    }
+
+    .card {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      margin: 10px auto;
+      background: #fff;
+    }
+
+    .card-header {
+      background-color: #fff;
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+
+    .card-image {
+      width: 50%;
+    }
+
+    .card-body {
+      padding: 10px;
+    }
+
+    s {
+      color: red;
+    }
+
+    .product_title {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .body_wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 5px;
+    }
+
+    .main {
+      width: 40%;
+     background: #f9f9f9;
+      padding: 17px;
+      position: relative;
+      top: 20px;
+      border-top: 5px solid;
+    }
+
+    .sample-form input:nth-child(1) {
+      width: 100%;
+      padding: 5px;
+      border: 2px solid #c9c4c4;
+      border-radius: 6px;
+    }
+
+    .sample-form {
+      display: flex;
+      gap: 5px;
+    }
+
+    .sample-form input:nth-child(2) {
+      padding: 5px;
+      border: 2px solid #c9c4c4;
+      border-radius: 6px;
+    }
+
+    .checkout_btn {
+      text-align: center;
+    }
+
+    .checkout_btn input {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #2e8aeb;
+      border-radius: 7px;
+      background: #2e8aeb;
+      color: #fff;
+      font-size: 13px;
+    }
+    .addtocart{
+         width: 100%;
+      padding: 10px;
+      border: 2px solid #2e8aeb;
+      border-radius: 7px;
+      background: #2e8aeb;
+      color: #fff;
+      font-size: 13px;
+    }
+    .checkout_btn p {
+      font-size: 10px;
+      padding: 5px 0;
+    }
+
+    .card-content {
+      width: 50%;
+    }
+
+    select {
+      border-radius: 10px;
+      padding: 10px;
+      margin-bottom: 5px;
+      border-color: #c9c4c4;
+    }
+
+    label {
+      position: relative;
+      background: #fff;
+      border-radius: 7px;
+      top: 10px;
+      left: 7px;
+      width: fit-content;
+      font-size: 14px;
+      padding: 0px 10px;
+    }
+
+    .carousel_wrap {
+      padding: 10px;
+    }
+
+    .carousel_wrap p {
+      margin-bottom: 10px;
+    }
+
+    .carousel_content {
+      margin: 10px;
+    }
+
+    .carousel_content p,
+    h4 {
+      margin: 0;
+    }
+    .carousel_wrap .cartList{
+           display: inline-flex;
+    gap: 10px;
+       overflow-y: scroll;
+
+    }
+    .slideBox{
+          padding: 10px;
+    background: #fff;
+    border-radius: 10px;
+    }
+  
+
+    @media only screen and (max-width: 600px) {
+
+      .main,
+      .card {
+        width: 100%;
+        padding: 10px;
+      }
+
+      .card-image {
+        width: 100%;
+      }
+
+      .body_wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .carousel_wrap {
+        padding: 10px;
+      }
+
+      .carousel_wrap p {
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+
+
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js" async></script>
+  <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+
+  <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+
+  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="main">
+      <h5>Hey There</h5>
+      <p>lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
+      <div class="card">
+
+        <div class="card-header">
+          <p>Product List</p>
+        </div>
+        <div class="card-body">
+
+          <amp-state id="grandTotal"></amp-state>
+
+          <amp-list src="https://landclass.in/test/phpFetch.php" layout="responsive" height="1000" width="1080" id="myAmpList" items="products" binding="refresh">
+              <template type="amp-mustache">
+                  <div class="products_List">
+                      <div class="product_title">
+                          <p>{{amptitle}}</p>
+                          <b id="price_{{id}}">${{price}}</b>
+                      </div>
+                      <div class="body_wrap">
+                          <div class="card-image">
+                              <amp-img alt="{{title}}" src="{{image}}" width="180" height="160" class="cover_image"></amp-img>
+                          </div>
+                          <div class="card-content">
+                              <p>{{description}}</p>
+                              <div style="display: grid;">
+                                  <label>Color</label>
+                                  <select>
+                                      <option value="Red">Red</option>
+                                      <option value="Blue">Blue</option>
+                                      <option value="Green">Green</option>
+                                  </select>
+          
+                                  <label for="quantity_{{id}}">Quantity</label>
+                                  <select id="quantity_{{id}}" name="quantity_{{id}}"
+                                          on="change:AMP.setState({
+                                              total_{{id}}: event.value * {{price}},
+                                              grandTotal: grandTotal + (event.value * {{price}} - (total_{{id}} || 0))
+                                          })">
+                                      <option value="1">1</option>
+                                      <option value="2">2</option>
+                                      <option value="3">3</option>
+                                      <option value="4">4</option>
+                                  </select>
+          
+                                  <p>Total Price: $<span [text]="total_{{id}}"></span></p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </template>
+          </amp-list>
+          
+          <!-- Display the grand total -->
+        
+
+        </div>
+
+      </div>
+
+      <div style="padding: 0 10px; gap: 6px; display: grid;">
+        <form class="sample-form">
+          <input type="text" placeholder="Discount code" name="submit">
+          <input type="submit" value="OK">
+        </form>
+        <div
+          style=" display: flex;  justify-content: space-between;    margin-top: 15px;   border-top: 2px solid #dbdbdb;">
+          <p>Sub Total</p>
+
+          <p>Sub Total: $<span [text]="grandTotal"></span></p>
+        </div>
+        <div style=" display: flex;  justify-content: space-between;">
+          <p>Taxes</p>
+          <p>Calculated at next step</p>
+        </div>
+        <div style="display: flex; justify-content: space-between;border-top: 2px solid #dbdbdb;">
+          <h4>Total</h4>
+          <div>
+            <p>Grand Total: $<span [text]="grandTotal"></span></p>
+          </div>
+        </div>
+        <div class="checkout_btn">
+          <input type="submit" value="Go to Checkout">
+          <p>secured & trusted checkout with</p>
+          <amp-img alt="" src="https://github.com/yadavraju/MailReactPublicFile/blob/main/visa.png?raw=true" width="200"
+            height="35" layout="fixed"></amp-img>
+        </div>
+      </div>
+
+      <div class="carousel_wrap">
+        <p>You may also like</p>
+
+       <amp-list src="https://landclass.in/test/test.json" class="cart" layout="responsive" width="1080" height="500" items="products" binding="refresh">
+        <template type="amp-mustache" >
+            <div class="cartList">
+                <div class="slideBox">
+                <amp-img src="{{image}}" alt="{{title}}" width="100" height="100"></amp-img>
+                <p>{{title}}</p>
+                <p>Price: ${{price}}</p>
+                <form method="POST" action-xhr="https://landclass.in/test/phpinsert.php"  enctype="multipart/form-data">
+               
+                        <input type="hidden" name="id" value="{{id}}">
+                        <input type="hidden" name="amptitle" value="{{title}}">
+                        <input type="hidden" name="color" value="{{color}}">
+                        <input type="hidden" name="price" value="{{price}}">
+                        <input type="hidden" name="image" value="{{image}}">
+                        
+                        <button type="submit" class="addtocart" on="tap:myAmpList.refresh">Submit</button>
+                
+                   
+                </form>
+            </div>
+            </div> 
+            
+        </template>
+    </amp-list>
+
+
+    </div>
+  </div>
+  </div>
+
+</body>
+
+</html>
